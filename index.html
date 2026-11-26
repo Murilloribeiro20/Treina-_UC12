@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TREINA+ | Entrar</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    
+    <main class="tela">
+        <section class="card" aria-labelledby="titulo">
+            <header class="card__topo">
+                <h1 class="logo" id="titulo">TREINA<span class="logo__mais">+</span></h1>
+                <h2 class="boas-vindas">Bem vindo(a)!</h2>
+                <p class="instrucao">Informe seu telefone ou CPF para continuar</p>
+            </header>
+
+            <form id="form-login" class="form">
+                <label class="campo" for="documento">
+                    <svg class="campo__icone" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4.5"></circle>
+                        <path d="M3 21c0-4.4 4-7 9-7s9 2.6 9 7z"></path>
+                    </svg>
+                    <input
+                        id="documento"
+                        name="documento"
+                        type="text"
+                        inputmode="numeric"
+                        placeholder="Telefone ou CPF"
+                        required>
+                </label>
+                <p id="erro" class="erro" role="alert" hidden></p>
+
+                <button type="submit" class="botao">Entrar no turno</button>
+                <p class="aviso">Primeiro acesso? Você assistirá a um vídeo de boas-vindas (30s).</p>
+            </form>
+
+            <footer class="card__rodape">
+                <img class="marca" src="./img/oitentao-removebg-preview.png" alt="Senac Fecomércio ES Sesc">
+            </footer>
+        </section>
+    </main>
+
+    <script src="js/index.js"></script>
 </body>
 </html>

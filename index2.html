@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TREINA+ — treinamento rápido para profissionais de turismo antes do turno.">
+  <title>TREINA+ | Prepare-se para o seu turno</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/index2.css">
+</head>
+<body>
+  <main class="tela">
+
+    <!-- CABEÇALHO -->
+    <header class="topo">
+    <div class="topo__marca">
+      <img src="img/logo.svg" alt="" class="topo__logo">
+      <span class="topo__nome">TREINA<span class="mais">+</span></span>
+    </div>
+    <nav class="topo__menu" aria-label="Menu principal">
+      <a href="#treino" class="ativo">Treino do dia</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <div class="topo__usuario">
+      <span class="saudacao" id="saudacao">Olá, colaborador!</span>
+    </div>
+  </header>
+
+  <main id="treino" class="treino">
+
+    <!-- PAINEL ESQUERDO: SETOR + VÍDEO -->
+    <section class="painel-setor" aria-labelledby="titulo-setor">
+      <p class="painel-setor__rotulo" id="titulo-setor">Hoje você está escalado para o setor:</p>
+
+      <label class="seletor" for="setor">
+        <span class="seletor__icone" id="iconeSetor" aria-hidden="true">🍴</span>
+        <select id="setor" aria-label="Escolha seu setor"></select>
+      </label>
+
+      <!-- CAMPO DO VÍDEO
+           O vídeo de cada módulo é definido no js/script.js (campo "video").
+           Ex.: video: "img/postura.mp4" -->
+      <div class="midia">
+        <video id="video" controls preload="metadata"></video>
+        <div class="midia__vazio" id="videoVazio">
+          <span aria-hidden="true">🎬</span>
+          <p>Espaço para o vídeo do módulo</p>
+        </div>
+      </div>
+      <p class="midia__dica">Assista ao vídeo curto antes de responder o quiz.</p>
+    </section>
+
+    <!-- PAINEL DIREITO: CONTEÚDO DO MÓDULO -->
+    <section class="painel-conteudo" aria-live="polite">
+
+      <div class="progresso-modulos">
+        <span id="textoProgresso">Módulo 1 de 2</span>
+        <div class="progresso-modulos__barra"><div id="barraModulos"></div></div>
+      </div>
+
+      <div class="etiqueta" id="tituloModulo">Postura e Encantamento</div>
+
+      <h2 class="subtitulo">3 Regras de Ouro</h2>
+      <ol class="regras" id="listaRegras"></ol>
+
+      <hr class="divisor">
+
+      <h2 class="subtitulo">Quiz Rápido</h2>
+      <p class="pergunta" id="pergunta"></p>
+      <form id="formQuiz" class="quiz">
+        <div id="alternativas" class="quiz__alternativas" role="radiogroup"></div>
+        <p class="quiz__feedback" id="feedback" role="status"></p>
+        <div class="quiz__acoes">
+          <button type="submit" class="botao" id="btnEnviar" disabled>Enviar resposta</button>
+          <button type="button" class="botao botao--secundario oculto" id="btnProximo">Próximo módulo →</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- TELA DE CONCLUSÃO -->
+  <div class="conclusao oculto" id="conclusao" role="dialog" aria-modal="true" aria-labelledby="tituloConclusao">
+    <div class="conclusao__caixa">
+      <div class="conclusao__selo" aria-hidden="true">✓</div>
+      <h2 id="tituloConclusao">Você está pronto para o turno!</h2>
+      <p id="textoConclusao"></p>
+      <button class="botao" id="btnRecomecar">Treinar outro setor</button>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="sobre">
+    <h2>Sobre o TREINA+</h2>
+    <p>
+      O TREINA+ é uma ferramenta de treinamento online para profissionais da área de turismo.
+      Em poucos minutos antes do turno, o colaborador assiste a um vídeo curto, revisa as
+      regras de ouro do seu setor e responde a um quiz rápido — chegando ao atendimento mais
+      preparado para encantar o hóspede.
+    </p>
+    <div class="sobre__cards">
+      <article><strong>🎯 Direcionado</strong><span>Conteúdo específico para o setor do dia.</span></article>
+      <article><strong>⏱️ Rápido</strong><span>Módulos de poucos minutos, antes do turno.</span></article>
+      <article><strong>📈 Mensurável</strong><span>Quiz com resultado imediato.</span></article>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <p>TREINA+ · Projeto Integrador — Desenvolvimento de Sistemas · SENAC / Fecomércio</p>
+  </footer>
+
+  </main>
+
+  <script src="./js/index2.js"></script>
+</body>
+</html>

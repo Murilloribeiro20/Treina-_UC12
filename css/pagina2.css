@@ -1,0 +1,342 @@
+:root {
+    --azul: #025392;
+    --azul-escuro: #0a3b6e;
+    --azul-medio: #316bb1;
+    --azul-suave: #b9d9ef;
+    --azul-claro: #e3f6fc;
+    --amarelo: #ffc928;
+    --verde: #1b8a45;
+    --borda: #c9e0ee;
+    --sombra: 0 4px 14px rgba(2, 83, 146, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--azul-claro);
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #173c70;
+}
+
+/* ===== Layout (desktop) ===== */
+.container {
+    width: 95%;
+    max-width: 1100px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: auto 1fr;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(2, 83, 146, 0.18);
+}
+
+header,
+.foto {
+    grid-column: 1;
+    background: linear-gradient(160deg, var(--azul), var(--azul-escuro));
+    color: white;
+}
+
+header {
+    padding: 26px 22px 12px;
+}
+
+.topo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+header h2 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ===== Marca TREINA+ ===== */
+.marca-treina {
+    margin-top: 10px;
+}
+
+.marca-treina h1 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.marca-treina h1 span {
+    color: var(--amarelo);
+    font-size: 48px;
+    margin-left: 3px;
+}
+
+.marca-treina p {
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--azul-suave);
+}
+
+.logo-senac {
+    width: 92px;
+    height: 66px;
+    object-fit: contain;
+}
+
+/* ===== Vídeo ===== */
+.foto {
+    padding: 12px 22px 24px;
+}
+
+.foto video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 460px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Conteúdo ===== */
+.conteudo {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    padding: 30px 32px;
+}
+
+.conteudo p {
+    font-size: 13px;
+}
+
+.conteudo h3 {
+    font-size: 21px;
+    color: var(--azul-medio);
+}
+
+.setor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0 28px;
+    padding: 10px 16px 10px 10px;
+    background: white;
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--amarelo);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+}
+
+.setor::before {
+    content: "🍴";
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--azul);
+    font-size: 18px;
+}
+
+/* ===== Progresso ===== */
+.progresso {
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--azul);
+}
+
+.barra {
+    height: 10px;
+    margin-top: 6px;
+    background: var(--azul-suave);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.barra div {
+    height: 100%;
+    background: linear-gradient(90deg, var(--amarelo), #f28c1b);
+    transition: width 0.6s;
+}
+
+/* ===== Módulos ===== */
+.modulos {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modulo {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    column-gap: 14px;
+    align-items: center;
+    padding: 12px 14px;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    font: inherit;
+    text-align: left;
+    color: inherit;
+    cursor: pointer;
+}
+
+.modulo:hover {
+    border-color: var(--azul-medio);
+    box-shadow: var(--sombra);
+}
+
+.modulo::before {
+    content: "🔒";
+    grid-row: 1 / 3;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    font-size: 16px;
+}
+
+.modulo::after {
+    content: "›";
+    grid-row: 1 / 3;
+    grid-column: 3;
+    font-size: 24px;
+    color: var(--azul-medio);
+}
+
+.modulo strong {
+    grid-column: 2;
+    font-size: 14px;
+    color: var(--azul-escuro);
+}
+
+.modulo small {
+    grid-column: 2;
+    font-size: 12px;
+    font-weight: 500;
+    color: #8f6a00;
+}
+
+.modulo.concluido {
+    border: 2px solid var(--verde);
+    background: #f3fbf6;
+}
+
+.concluido::before {
+    content: "✔";
+    background: var(--verde);
+    color: white;
+}
+
+.concluido::after {
+    content: none;
+}
+
+.concluido small {
+    color: var(--verde);
+}
+
+/* ===== Mensagem final ===== */
+.futuro {
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: var(--azul);
+    color: white;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===== Rodapé (só no celular) ===== */
+footer {
+    display: none;
+}
+
+.icone-menu {
+    width: 65px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+}
+
+.icone-menu img {
+    width: 40px;
+    height: 40px;
+}
+
+.icone-menu.ativo {
+    border-bottom: 4px solid var(--azul);
+}
+
+/* ===== Celular ===== */
+@media (max-width: 650px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 80px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    header {
+        padding: 20px 18px 8px;
+    }
+
+    .marca-treina h1 {
+        font-size: 34px;
+    }
+
+    .marca-treina h1 span {
+        font-size: 41px;
+    }
+
+    .logo-senac {
+        width: 78px;
+        height: 56px;
+    }
+
+    .foto {
+        padding: 10px 18px 38px;
+    }
+
+    .foto video {
+        aspect-ratio: auto;
+        height: 210px;
+    }
+
+    /* Conteúdo sobe um pouco sobre o vídeo */
+    .conteudo {
+        margin-top: -24px;
+        padding: 22px 16px 16px;
+        background: var(--azul-claro);
+        border-radius: 24px 24px 0 0;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        background: white;
+        border-top: 1px solid var(--azul);
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -2px 10px rgba(2, 83, 146, 0.12);
+    }
+}
